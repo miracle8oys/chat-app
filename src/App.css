@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.chat-nav {
+  display: grid;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.chat-nav form {
+  display: flex;
+}
+
+.chat {
+  display: flex;
+  margin-top: 0.7rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.mychat {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.7rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.mychat h5 {
+  display: flex;
+  justify-content: right;
+}
+
+.chat img {
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.mychat img {
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.home input {
+  height: 3rem;
+}
+
+.home button {
+  height: 3rem;
+}
+
+.home button:hover {
+  background-color: #075e54;
+}
+
+.msg-title {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.msg {
+  margin-left: 1rem;
+  width: fit-content;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
   color: white;
+  background-color: #075e54;
 }
 
-.App-link {
-  color: #61dafb;
+.chat-btn {
+  background-color: #075e54;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.navbar-brand img {
+  border-radius: 50%;
+  width: 4.5rem;
+}
+
+.unauth {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 576px) {
+  .nav-btn-con {
+    margin-left: 40vw;
   }
 }

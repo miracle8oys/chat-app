@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Home from './Home';
+import {signInWithGoogle, auth} from "./config/firebase";
+import {signOut, onAuthStateChanged} from "firebase/auth";
+import { useState } from 'react';
 
 function App() {
+
+  const [user, setUser] = useState(null);
+  onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+  });
+
+  const handleLogout = () => {
+    signOut(auth);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Home user={user} signInWithGoogle={signInWithGoogle} handleLogout={handleLogout} />
     </div>
   );
 }
